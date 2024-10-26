@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --sky-blue: #87CEEB;
+  --cloud-white: #FFFFFF;
+  --pixel-black: #000000;
+  --pixel-yellow: #FFD700;
+  --pixel-green: #32CD32;
+  --pixel-red: #FF4500;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Press Start 2P', cursive;
+  background-color: var(--sky-blue);
+  color: var(--pixel-black);
+  image-rendering: pixelated;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.cloud {
+  position: absolute;
+  background-color: var(--cloud-white);
+  border-radius: 10px;
+  box-shadow: 5px 5px 0 rgba(0,0,0,0.2);
+}
+
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background-color: var(--cloud-white);
+  border-radius: 50%;
+}
+
+.cloud-1 { width: 100px; height: 30px; top: 10%; left: 10%; }
+.cloud-2 { width: 80px; height: 25px; top: 30%; right: 15%; }
+.cloud-3 { width: 120px; height: 35px; top: 50%; left: 20%; }
+.cloud-4 { width: 90px; height: 28px; top: 70%; right: 25%; }
+.cloud-5 { width: 110px; height: 32px; top: 85%; left: 30%; }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--cloud-white);
+  box-shadow: 0 5px 0 rgba(0,0,0,0.2);
+}
+
+.logo {
+  font-size: 1.2rem;
+  color: var(--pixel-black);
+}
+
+nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--pixel-black);
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--pixel-yellow);
+}
+
+main {
+  flex-grow: 1;
+  padding: 2rem;
+}
+
+.hero {
+  background-color: var(--cloud-white);
+  border: 5px solid var(--pixel-black);
+  box-shadow: 10px 10px 0 rgba(0,0,0,0.2);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.hero:hover {
+  transform: translateY(-5px);
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--pixel-yellow);
+}
+
+.hero p {
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.signup-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+input[type="email"] {
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  border: 3px solid var(--pixel-black);
+  font-family: 'Press Start 2P', cursive;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  background-color: var(--pixel-green);
+  color: var(--pixel-black);
+  border: 3px solid var(--pixel-black);
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--pixel-yellow);
+}
+
+.hero-icon {
+  width: 150px;
+  height: 150px;
+  background-color: var(--pixel-red);
+  border: 5px solid var(--pixel-black);
+  margin-left: 2rem;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background-color: var(--cloud-white);
+  border: 5px solid var(--pixel-black);
+  box-shadow: 5px 5px 0 rgba(0,0,0,0.2);
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: scale(1.05);
+}
+
+.feature-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--pixel-green);
+}
+
+.feature-card p {
+  font-size: 0.8rem;
+}
+
+footer {
+  background-color: var(--cloud-white);
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  box-shadow: 0 -5px 0 rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+  }
+
+  .hero-icon {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+
+  .signup-form {
+    flex-direction: column;
+  }
+
+  input[type="email"], button {
+    width: 100%;
+  }
+}

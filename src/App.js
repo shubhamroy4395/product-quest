@@ -13,6 +13,18 @@ function App() {
     moveClouds();
   }, []);
 
+  function updateSignupCTA(newText) {
+    const signupButton = document.getElementById('signup-cta');
+    if (signupButton) {
+      signupButton.textContent = newText;
+    } else {
+      console.warn('Signup button not found');
+    }
+  }
+
+  // Example usage: Change the button text to "Start Your Journey"
+  updateSignupCTA("Start Your Quest later");
+
   return (
     <div className="app">
       <div className="sky">
@@ -21,7 +33,7 @@ function App() {
         ))}
       </div>
       <header>
-        <div className="logo">ProductQuest</div>
+        <div className="logo">PM Quest</div>
         <nav>
           <a href="#home">Home</a>
           <a href="#resources">Resources</a>
@@ -34,10 +46,12 @@ function App() {
           <div className="hero-content">
             <div className="hero-text">
               <h1>Build Your PM Career, Block by Block</h1>
-              <p>Join a community of product managers crafting the future, one pixel at a time.</p>
+              <p>"Want to Master Product Management Skills and Stand Out? 🚀
+              Join a community of like-minded PM enthusiasts tackling real-world challenges! Get hands-on with weekly exercises, expert-led discussions, and a chance to showcase your progress on a leaderboard with certifications and prizes. Sign up today and get access to your first challenge – start building your product portfolio!"
+              </p>
               <form className="signup-form">
                 <input type="email" placeholder="Enter your email" required />
-                <button type="submit">Join the Quest</button>
+                <button type="submit" id="signup-cta">Join the Quest</button>
               </form>
             </div>
             <div className="hero-icon">
@@ -62,7 +76,7 @@ function App() {
         </section>
       </main>
       <footer>
-        <p>&copy; 2023 ProductQuest. All rights reserved.</p>
+        <p>&copy; 2024 PM Quest. All rights reserved.</p>
       </footer>
     </div>
   );

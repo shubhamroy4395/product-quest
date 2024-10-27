@@ -86,11 +86,12 @@ main {
 
 .hero {
   background-color: var(--cloud-white);
-  border: 5px solid var(--pixel-black);
+  
   box-shadow: 10px 10px 0 rgba(0,0,0,0.2);
   padding: 2rem;
   margin-bottom: 2rem;
   transition: transform 0.3s ease;
+  height: 38h;
 }
 
 .hero:hover {
@@ -109,18 +110,22 @@ main {
 
 h1 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin: auto;
   color: var(--pixel-yellow);
 }
 
 .hero p {
   font-size: 0.8rem;
-  margin-bottom: 1rem;
+  margin: 3rem;
+  padding: 1%;
+  align-self: flex-end;
 }
 
 .signup-form {
   display: flex;
   gap: 0.5rem;
+  align-self: flex-end;
+  margin-top: 8rem;
 }
 
 input[type="email"] {
@@ -146,22 +151,24 @@ button:hover {
 }
 
 .hero-icon {
-  width: 150px;
-  height: 150px;
-  background-color: var(--pixel-red);
-  border: 5px solid var(--pixel-black);
-  margin-left: 2rem;
+  width: 20vw;
+  height: 35vh;
+  background-color: var(--pixel-yellow);
+  margin-left: auto;
+  margin-top: 1rem;
+  align-self: auto;
 }
 
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+  margin: auto;
+  height: 30vh;
 }
 
 .feature-card {
   background-color: var(--cloud-white);
-  border: 5px solid var(--pixel-black);
   box-shadow: 5px 5px 0 rgba(0,0,0,0.2);
   padding: 1rem;
   transition: transform 0.3s ease;
